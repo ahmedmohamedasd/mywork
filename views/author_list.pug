@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h3 #{title}
+    
+    ul
+        each author in author_list
+            li
+                
+                a(href=author.url) #{author.name} |
+                p Birth Date - ( #{author.date_of_birth} )
+                if !author.date_of_death
+                   p still alive
+                else 
+                  p Death Date  (#{author.date_of_death})
+
+        else
+            li  are not any Author  
